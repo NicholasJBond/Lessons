@@ -18,7 +18,7 @@ public class Lesson1 {
         incomes.add(150000.00); // Employment
         incomes.add(25000.00); // Bonuses;
         incomes.add(58000.00); // Investment Dividends;
-        System.out.println("Total amount of tax due: $" + totalTaxDue(incomes));
+        System.out.println("Total amount of tax due: $" + totalTaxDue(incomes)); //Should be 46046.0
     }
 
     public static double taxDue(double annualIncome){
@@ -36,7 +36,10 @@ public class Lesson1 {
     }
 
     private static double totalTaxDue(List<Double> incomes) {
-
-        return 0;
+        double totalIncome = 0;
+        for (double income: incomes){
+            totalIncome += income;
+        }
+        return taxDue(totalIncome);
     }
 }
